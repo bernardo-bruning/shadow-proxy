@@ -1,0 +1,41 @@
+version: "3.3"
+services:
+  server:
+    image: nginxdemos/hello:plain-text
+    ports:
+      - "8431:80"
+
+  pubsub:
+    image: singularities/pubsub-emulator
+    environment:
+      - PUBSUB_PROJECT_ID=project-test
+      - PUBSUB_LISTEN_ADDRESS=0.0.0.0:8432
+    ports:
+      - "8432:8432"
+
+  consumer:
+    build: .
+    environment:
+      - PROJECT_ID=project-test
+      - TOPIC_ID=requests
+      - SUBSCRIPTION_ID=requests-sub
+      - PUBSUB_EMULATOR_HOST=pubsub:8432
+      - URL=http://server:80
+    command: "/shadowd -consumer"
+    depends_on:
+      - proxy
+
+  proxy:
+    build: .
+    ports:
+      - "8430:8080"
+    environment:
+      - PORT=:8080
+      - PROJECT_ID=project-test
+      - TOPIC_ID=requests
+      - TYPE=PUBSUB
+      - PUBSUB_EMULATOR_HOST=pubsub:8432
+      - URL=http://server:80
+
+volumes:
+  logvolume01: {}
