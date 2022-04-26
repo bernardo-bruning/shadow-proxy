@@ -1,4 +1,4 @@
-module shadowproxy
+module github.com/bernardo-bruning/shadowproxy
 
 go 1.18
 

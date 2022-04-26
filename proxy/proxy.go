@@ -5,8 +5,9 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"shadowproxy/domain"
-	"shadowproxy/replication"
+
+	"github.com/bernardo-bruning/shadowproxy/domain"
+	"github.com/bernardo-bruning/shadowproxy/replication"
 )
 
 type Proxy struct {

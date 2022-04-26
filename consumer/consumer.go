@@ -4,7 +4,8 @@ import (
 	"context"
 	"log"
 	"net/http"
-	"shadowproxy/domain"
+
+	"github.com/bernardo-bruning/shadowproxy/domain"
 
 	"cloud.google.com/go/pubsub"
 )

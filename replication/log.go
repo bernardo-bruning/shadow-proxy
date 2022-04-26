@@ -3,7 +3,8 @@ package replication
 import (
 	"context"
 	"log"
-	"shadowproxy/domain"
+
+	"github.com/bernardo-bruning/shadowproxy/domain"
 )
 
 type Log struct {

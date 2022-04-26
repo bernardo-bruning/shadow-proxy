@@ -5,10 +5,11 @@ import (
 	"flag"
 	"log"
 	"os"
-	"shadowproxy/consumer"
-	"shadowproxy/filters"
-	"shadowproxy/proxy"
-	"shadowproxy/replication"
+
+	"github.com/bernardo-bruning/shadowproxy/consumer"
+	"github.com/bernardo-bruning/shadowproxy/filters"
+	"github.com/bernardo-bruning/shadowproxy/proxy"
+	"github.com/bernardo-bruning/shadowproxy/replication"
 )
 
 var consumerFlag = flag.Bool("consumer", false, "consumer")

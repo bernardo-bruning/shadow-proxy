@@ -2,7 +2,8 @@ package replication
 
 import (
 	"context"
-	"shadowproxy/domain"
+
+	"github.com/bernardo-bruning/shadowproxy/domain"
 
 	"cloud.google.com/go/pubsub"
 )
