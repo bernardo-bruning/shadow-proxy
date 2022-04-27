@@ -2,10 +2,25 @@
 
 A simple proxy to replicate production traffic to another infrastructure.
 
-# Configuration
+## Install
+
+### Go Install
+
+Only execute:
+```
+go install github.com/bernardo-bruning/shadowproxy/cmd/shadowd@latest
+```
+
+### Docker
+
+```
+docker pull bernardobruning/shadowproxy
+```
+
+## Configuration
 Shadow proxy is composed of 2 components, server and consumer, described your configurations bellow.
 
-## Proxy 
+### Proxy 
 
 You can start your proxy with environments variables:
 
@@ -24,7 +39,7 @@ shadowd
 
 > Topic is created automatic case it is not exists
 
-## Consumer
+### Consumer
 You can start the consumer with environments variables:
 
 ```
